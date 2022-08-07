@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "paths": {
+    "/tasks": {
+      "name": "/tasks",
+      "lambdaFunction": "tasks",
+      "permissions": {
+        "setting": "open"
+      }
+    },
+    "/addTasks": {
+      "name": "/addTasks",
+      "lambdaFunction": "addTasks",
+      "permissions": {
+        "setting": "open"
+      }
+    },
+    "/deleteTasks": {
+      "name": "/deleteTasks",
+      "lambdaFunction": "deleteTasks",
+      "permissions": {
+        "setting": "open"
+      }
+    }
+  }
+}
