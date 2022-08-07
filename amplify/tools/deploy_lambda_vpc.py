@@ -43,11 +43,16 @@ def update_vpc(path):
         f = open(path, 'r+')
         template = json.load(f)
         additional = {
-            "Effect": "Allow",
-            "Action": "ec2:*",
-            "Resource": "*"
+            "VpcConfig": {
+                "SecurityGroupIds": [
+                    "sg-011f20410620849ac"
+                ],
+                "SubnetIds": [
+                    "subnet-068441fc8d520b01f"
+                ]
+            }
         }
-        template['Resources']['lambdaexecutionpolicy']['Properties']['PolicyDocument']['Statement'].append(additional)
+        template['Resources']['LambdaFunction']['Properties'].update(additional)
         f.seek(0)
         f.write(json.dumps(template, indent=2))
         f.truncate()
