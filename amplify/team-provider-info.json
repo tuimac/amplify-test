@@ -1,34 +1,21 @@
 {
   "dev": {
     "awscloudformation": {
-      "AuthRoleName": "amplify-test-dev-151804-authRole",
-      "UnauthRoleArn": "arn:aws:iam::409826931222:role/amplify-test-dev-151804-unauthRole",
-      "AuthRoleArn": "arn:aws:iam::409826931222:role/amplify-test-dev-151804-authRole",
+      "AuthRoleName": "amplify-test-dev-185015-authRole",
+      "UnauthRoleArn": "arn:aws:iam::409826931222:role/amplify-test-dev-185015-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::409826931222:role/amplify-test-dev-185015-authRole",
       "Region": "ap-northeast-1",
-      "DeploymentBucketName": "amplify-test-dev-151804-deployment",
-      "UnauthRoleName": "amplify-test-dev-151804-unauthRole",
-      "StackName": "amplify-test-dev-151804",
-      "StackId": "arn:aws:cloudformation:ap-northeast-1:409826931222:stack/amplify-test-dev-151804/b2c87060-1618-11ed-b465-0adccf9756a9",
-      "AmplifyAppId": "d2bydauulpt3h"
+      "DeploymentBucketName": "amplify-test-dev-185015-deployment",
+      "UnauthRoleName": "amplify-test-dev-185015-unauthRole",
+      "StackName": "amplify-test-dev-185015",
+      "StackId": "arn:aws:cloudformation:ap-northeast-1:409826931222:stack/amplify-test-dev-185015/abefa220-17c8-11ed-b9f8-06cc4fb9ffb7",
+      "AmplifyAppId": "d1vjd40mxrk8h8"
     },
     "categories": {
       "function": {
-        "testtodotask": {
-          "deploymentBucketName": "amplify-test-dev-151804-deployment",
-          "s3Key": "amplify-builds/testtodotask-LambdaLayerVersiond21c0a48-build.zip"
-        },
-        "deleteTasks": {
-          "deploymentBucketName": "amplify-test-dev-151804-deployment",
-          "s3Key": "amplify-builds/deleteTasks-466b4f70513958685170-build.zip"
-        },
-        "tasks": {
-          "deploymentBucketName": "amplify-test-dev-151804-deployment",
-          "s3Key": "amplify-builds/tasks-56625838357761496b44-build.zip"
-        },
-        "addTasks": {
-          "deploymentBucketName": "amplify-test-dev-151804-deployment",
-          "s3Key": "amplify-builds/addTasks-496839392b6453355656-build.zip"
-        }
+        "tasks": {},
+        "addTasks": {},
+        "deleteTasks": {}
       }
     }
   }

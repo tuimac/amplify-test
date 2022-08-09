@@ -59,10 +59,23 @@ def update_vpc(path):
     except Exception as e:
         raise e
 
+def cleanup_all(path):
+    try:
+        f = open(path, 'r+')
+        template = json.load(f)
+        del template['Resources']['LambdaFunction']['Properties']['VpcConfig']
+        f.seek(0)
+        f.write(json.dumps(template, indent=2))
+        f.truncate()
+
+    except Exception as e:
+        raise e
+
 if __name__ == '__main__':
     try:
         for path in get_targets_file_path():
             #update_iam(path)
-            update_vpc(path)
+            #update_vpc(path)
+            cleanup_all(path)
     except:
         traceback.print_exc()
