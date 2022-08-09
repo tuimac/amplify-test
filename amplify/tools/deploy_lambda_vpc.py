@@ -75,7 +75,7 @@ if __name__ == '__main__':
     try:
         for path in get_targets_file_path():
             #update_iam(path)
-            #update_vpc(path)
-            cleanup_all(path)
+            update_vpc(path)
+            #cleanup_all(path)
     except:
         traceback.print_exc()

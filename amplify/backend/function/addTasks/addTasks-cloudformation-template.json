@@ -80,7 +80,15 @@
         },
         "Runtime": "nodejs14.x",
         "Layers": [],
-        "Timeout": 25
+        "Timeout": 25,
+        "VpcConfig": {
+          "SecurityGroupIds": [
+            "sg-011f20410620849ac"
+          ],
+          "SubnetIds": [
+            "subnet-068441fc8d520b01f"
+          ]
+        }
       }
     },
     "LambdaExecutionRole": {
