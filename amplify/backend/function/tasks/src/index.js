@@ -18,7 +18,6 @@ const response = {
 
 exports.handler = (event, context, callback) => {
   const sql = 'select * from TODOS;';
-  var res = '';
 
   connection.query(sql, function(err, result) {
     if (err) {
