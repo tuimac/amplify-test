@@ -1,17 +1,33 @@
+const mysql = require('mysql');
 
+const connection = mysql.createConnection({
+  host: 'database-1.cjsttbydw6j6.ap-northeast-1.rds.amazonaws.com',
+  user: 'admin',
+  password: 'password',
+  database: 'todomanager'
+});
 
-/**
- * @type {import('@types/aws-lambda').APIGatewayProxyHandler}
- */
 exports.handler = async (event) => {
-    console.log(`EVENT: ${JSON.stringify(event)}`);
-    return {
-        statusCode: 200,
-    //  Uncomment below to enable CORS requests
-    //  headers: {
-    //      "Access-Control-Allow-Origin": "*",
-    //      "Access-Control-Allow-Headers": "*"
-    //  }, 
-        body: JSON.stringify('Hello from Lambda!'),
-    };
+  const sql = 'SHOW TABLES;';
+  var res = '';
+
+  connection.query(sql, (err, result) => {
+    if (err) {
+      console.log(err);
+      return;
+    }
+    res = result;
+  });
+
+  return {
+    statusCode: 200,
+    headers: {
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Headers": "*"
+    }, 
+    body: {
+      'event': JSON.stringify(event),
+      'response': res
+    }
+  };
 };
