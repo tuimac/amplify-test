@@ -53,11 +53,14 @@ class TaskList extends React.Component {
                     <hr />
                     <div className="ui cards" style={{padding: '10px 10px 0 10px', display:'flex', justifyContent: 'space-between'}}>
                     {
-                        this.state.taskList.map((task, taskid) => (
+                        this.state.taskList.map((task) => (
                             <div className="card" key={taskid}>
                                 <div className="content">
                                     <div className="meta" style={{fontWeight: 'bold', fontSize:'20px', paddingBottom: '5px'}}>
-                                        {task.task}
+                                        {task.TodoID}
+                                    </div>
+                                    <div className="meta" style={{fontWeight: 'bold', fontSize:'20px', paddingBottom: '5px'}}>
+                                        {task.TodoName}
                                     </div>
                                     <div className="extra content">
                                         <div className="ui buttons">
