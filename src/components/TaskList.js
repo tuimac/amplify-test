@@ -19,13 +19,16 @@ class TaskList extends React.Component {
         this.getTaskList(task)
     }
 
-    getTaskList = () => {
-        axios.get('stripeapi',API_URL+'/tasks')
-            .then((response) => response.data)
-            .then((response) => {
-                this.setState({taskList: response})
-            })
-    }
+    getTaskList() {
+      axios.get(API_URL + '/tasks')
+        .then(res => {
+          console.log(res.data);
+          this.setState({ taskList: res.data, loading: false })
+        })
+        .catch(err => {
+          console.error(err);
+        }
+    )}
 
     onDeleteClick = (taskid) => {
         axios.delete(API_URL+`/deleteTask/${taskid}`)
@@ -54,7 +57,7 @@ class TaskList extends React.Component {
                     <div className="ui cards" style={{padding: '10px 10px 0 10px', display:'flex', justifyContent: 'space-between'}}>
                     {
                         this.state.taskList.map((task) => (
-                            <div className="card" key={taskid}>
+                            <div className="card">
                                 <div className="content">
                                     <div className="meta" style={{fontWeight: 'bold', fontSize:'20px', paddingBottom: '5px'}}>
                                         {task.TodoID}
