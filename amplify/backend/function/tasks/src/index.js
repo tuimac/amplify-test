@@ -3,7 +3,7 @@
 /**
  * @type {import('@types/aws-lambda').APIGatewayProxyHandler}
  */
-exports.handler = (event) => {
+exports.handler = async (event) => {
     return {
       statusCode: 200,
       headers: {
